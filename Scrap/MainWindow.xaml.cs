@@ -20,9 +20,34 @@ namespace Scrap
     /// </summary>
     public partial class MainWindow : Window
     {
+        Scraper scraper;
         public MainWindow()
         {
+
             InitializeComponent();
+            scraper = new Scraper();
+            DataContext = scraper;
+
+
+
+
         }
+
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            scraper.ScrapeData(TbPage.Text);
+
+        }
+
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
