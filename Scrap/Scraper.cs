@@ -1,41 +1,28 @@
 ﻿using HtmlAgilityPack;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Web;
-using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Net;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-
-
-
+using System.Web;
+using System.IO;
+using System.Drawing.Imaging;
+using System.Collections;
+using System;
 
 
 namespace Scrap
 {
     public class Scraper
     {
-        private ObservableCollection<Property> _entries = new ObservableCollection<Property>();
-        public ObservableCollection<Property> Entries
+        private ObservableCollection<Property> properties = new ObservableCollection<Property>();
+
+        public ObservableCollection<Property> Properties
         {
-            get { return _entries; }
-            set { _entries = value; }
+            get { return properties; }
+            set { properties = value; }
         }
 
 
-        public string[,] ScrapeData(string page)
+        public void ScrapeData(string page)
         {
             List<string> headerl = new List<string>();
             List<string> contentl = new List<string>();
@@ -168,17 +155,141 @@ namespace Scrap
                 }
             }
 
-            return tab3;
-  
-            //_entries.Add(new Property { Tytuł = header, Opis = text, Adres = loc, Cena = pricel[0], Powierzchnia = tab2[6], OfertaOd = tab2[0], Zabudowa = tab2[5], Pokoje = tab2[7] });
+
+            Dictionary<string, string> property = new Dictionary<string, string>();
+
+            property.Add("Tytuł", header);
+            property.Add("Opis", text);
+            property.Add("Adres", loc);
+
+            for (int i = 0; i < tab.Count-1; i++)
+            {
+                if (tab[i]== "Cena za m²")
+                {
+                    property.Add("Cena za m²", tab2[i]);
+                    continue;
+                }
+                if (tab[i] == "Umeblowane")
+                {
+                    property.Add("Umeblowane", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Oferta od")
+                {
+                    property.Add("Oferta od", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Poziom")
+                {
+                    property.Add("Poziom", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Rynek")
+                {
+                    property.Add("Rynek", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Rodzaj zabudowy")
+                {
+                    property.Add("Rodzaj zabudowy", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Powierzchnia")
+                {
+                    property.Add("Powierzchnia", tab2[i]);
+                    continue;
+
+                }
+                if (tab[i] == "Liczba pokoi")
+                {
+                    property.Add("Liczba pokoi", tab2[i]);
+                    continue;
+
+                }
+
+            }
+
+            
 
 
+
+            //for (int i = 0; i < 10; i++)
+            //{
+
+            //    if (tab3[i, 0] == "Tytuł")
+            //    {
+            //        property.Add(tab3[i, 0],tab3[i,1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Opis")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Cena")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Adres")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Powierzchnia")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Liczba pokoi")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Poziom")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Umeblowanie")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Rodzaj zabudowy")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Cena za m²")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i, 0] == "Rynek")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+
+            //    if (tab3[i, 0] == "Oferta od")
+            //    {
+            //        property.Add(tab3[i, 0], tab3[i, 1]);
+            //        continue;
+            //    }
+            //    if (tab3[i,0]== null)
+            //    {
+            //        break;
+            //    }
 
 
         }
-
-
-
-
     }
 }
+
+

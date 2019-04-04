@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Scrap
 {
     /// <summary>
@@ -27,13 +28,10 @@ namespace Scrap
             InitializeComponent();
             scraper = new Scraper();
             DataContext = scraper;
-
-
-
-
+            
+            
+            
         }
-
-
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,6 +45,12 @@ namespace Scrap
         {
 
         }
+
+
+
+
+
+
 
 
     }

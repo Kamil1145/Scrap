@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Scrap"
         mc:Ignorable="d"
         Title="MyOLXScraper" Height="450" Width="1366">
-    <Grid>
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -78,16 +78,16 @@
             </DataGrid>
             <TextBox x:Name="textBox1"
                      HorizontalAlignment="Left" 
-                     Height="124" 
+                     Height="140" 
                      
-                     Margin="470,10,0,0" 
+                     Margin="508,74,0,0" 
                      TextWrapping="Wrap" 
-                     Text="TextBox" 
+                     Text="Scr" 
                      VerticalAlignment="Top" 
-                     Width="220"/>
+                     Width="229"/>
 
-            
-            
+
+
             <TextBox x:Name="textBox2" 
                      HorizontalAlignment="Left" 
                      Height="124" 

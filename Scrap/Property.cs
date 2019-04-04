@@ -16,12 +16,23 @@ namespace Scrap
         public string Pokoje { get; set; }
         public string Poziom { get; set; }
         public string Umeblowanie { get; set; }
-        public string Zabudowa { get; set; }
+        public string Rodzaj_zabudowy { get; set; }
         public string CenaZaM { get; set; }
         public string OfertaOd { get; set; }
-
+        public string Rynek { get; set; }
 
     }
+
+
+    
+
+
+
+
+
+
+
+
 
 }
 
