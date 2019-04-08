@@ -28,8 +28,7 @@ namespace Scrap
             InitializeComponent();
             scraper = new Scraper();
             DataContext = scraper;
-            
-            
+
             
         }
 
@@ -37,6 +36,7 @@ namespace Scrap
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             scraper.ScrapeData(TbPage.Text);
+            textBox1.Text = Property.prop["tytul"];
 
         }
 

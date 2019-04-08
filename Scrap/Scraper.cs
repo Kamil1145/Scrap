@@ -156,140 +156,95 @@ namespace Scrap
             }
 
 
-            Dictionary<string, string> property = new Dictionary<string, string>();
+            //Dictionary<string, string> property = new Dictionary<string, string>();
 
-            property.Add("Tytuł", header);
-            property.Add("Opis", text);
-            property.Add("Adres", loc);
 
-            for (int i = 0; i < tab.Count-1; i++)
+
+            Property.prop.Add("tytuł", header);
+            Property.prop.Add("opis", text);
+            Property.prop.Add("adres", loc);
+
+            //for (int i = 0; i < tab.Count - 1; i++)
+            //{
+            //    switch (tab[i])
+            //    {
+            //        case "Cena za m²":
+            //            property.Add("Cena za m²", tab2[i]);
+            //            break;
+            //        case "Umeblowane":
+            //            property.Add("Umeblowane", tab2[i]);
+            //            break;
+            //        case "Oferta od":
+            //            property.Add("Oferta od", tab2[i]);
+            //            break;
+            //        case "Poziom":
+            //            property.Add("Poziom", tab2[i]);
+            //            break;
+            //        case "Rynek":
+            //            property.Add("Rynek", tab2[i]);
+            //            break;
+            //        case "Rodzaj zabudowy":
+            //            property.Add("Rodzaj zabudowy", tab2[i]);
+            //            break;
+            //        case "Powierzchnia":
+            //            property.Add("Powierzchnia", tab2[i]);
+            //            break;
+            //        case "Liczba pokoi":
+            //            property.Add("Liczba pokoi", tab2[i]);
+            //            break;
+
+            //        default:
+            //            break;
+            //    }
+
+
+
+            for (int i = 0; i < tab.Count - 1; i++)
             {
-                if (tab[i]== "Cena za m²")
+                switch (tab[i])
                 {
-                    property.Add("Cena za m²", tab2[i]);
-                    continue;
-                }
-                if (tab[i] == "Umeblowane")
-                {
-                    property.Add("Umeblowane", tab2[i]);
-                    continue;
+                    case "Cena za m²":
+                        Property.prop.Add("Cena za m²", tab2[i]);
+                        break;
+                    case "Umeblowane":
+                        Property.prop.Add("Umeblowane", tab2[i]);
+                        break;
+                    case "Oferta od":
+                        Property.prop.Add("Oferta od", tab2[i]);
+                        break;
+                    case "Poziom":
+                        Property.prop.Add("Poziom", tab2[i]);
+                        break;
+                    case "Rynek":
+                        Property.prop.Add("Rynek", tab2[i]);
+                        break;
+                    case "Rodzaj zabudowy":
+                        Property.prop.Add("Rodzaj zabudowy", tab2[i]);
+                        break;
+                    case "Powierzchnia":
+                        Property.prop.Add("Powierzchnia", tab2[i]);
+                        break;
+                    case "Liczba pokoi":
+                        Property.prop.Add("Liczba pokoi", tab2[i]);
+                        break;
 
+                    default:
+                        break;
                 }
-                if (tab[i] == "Oferta od")
-                {
-                    property.Add("Oferta od", tab2[i]);
-                    continue;
 
-                }
-                if (tab[i] == "Poziom")
-                {
-                    property.Add("Poziom", tab2[i]);
-                    continue;
 
-                }
-                if (tab[i] == "Rynek")
-                {
-                    property.Add("Rynek", tab2[i]);
-                    continue;
 
-                }
-                if (tab[i] == "Rodzaj zabudowy")
-                {
-                    property.Add("Rodzaj zabudowy", tab2[i]);
-                    continue;
-
-                }
-                if (tab[i] == "Powierzchnia")
-                {
-                    property.Add("Powierzchnia", tab2[i]);
-                    continue;
-
-                }
-                if (tab[i] == "Liczba pokoi")
-                {
-                    property.Add("Liczba pokoi", tab2[i]);
-                    continue;
-
-                }
 
             }
-
-            
-
-
-
-            //for (int i = 0; i < 10; i++)
-            //{
-
-            //    if (tab3[i, 0] == "Tytuł")
-            //    {
-            //        property.Add(tab3[i, 0],tab3[i,1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Opis")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Cena")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Adres")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Powierzchnia")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Liczba pokoi")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Poziom")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Umeblowanie")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Rodzaj zabudowy")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Cena za m²")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i, 0] == "Rynek")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-
-            //    if (tab3[i, 0] == "Oferta od")
-            //    {
-            //        property.Add(tab3[i, 0], tab3[i, 1]);
-            //        continue;
-            //    }
-            //    if (tab3[i,0]== null)
-            //    {
-            //        break;
-            //    }
-
-
         }
     }
 }
+
+
+
+
+
+
+
 
 
