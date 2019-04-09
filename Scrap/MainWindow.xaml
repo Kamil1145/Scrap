@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scrap"
         mc:Ignorable="d"
-        Title="MyOLXScraper" Height="450" Width="1366">
-        <Grid>
+        Title="MyOLXScraper" Height="739" Width="1068">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -43,60 +43,188 @@
                 <ColumnDefinition Width="1318*"/>
                 <ColumnDefinition Width="41*"/>
             </Grid.ColumnDefinitions>
-            <!--<DataGrid ItemsSource="{Binding Entries}"/>-->
-            <DataGrid x:Name="myData" 
-                      HorizontalAlignment="Left" 
-                      ItemsSource="{Binding Entries}"
-                      Margin="10,10,0,10"
-                      Width="442" RowHeight="40">
-                <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="Turquoise"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
-                        <Setter Property="BorderBrush" Value="Black"/>
-                    </Style>
-                </DataGrid.Resources>
 
-                <DataGrid.Columns>
-                    <!--<DataGridTextColumn Header="Tytuł" 
-                                        Binding ="{Binding Tytuł}"
-                                        Width="230"
-                                        />
-                    <DataGridTextColumn Header="Treść" 
-                                        Binding ="{Binding Opis}"
-                                        Width="500"
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="30,11,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="Tytuł" 
+                       VerticalAlignment="Top" 
+                       Width="87"/>
 
-                                        />
-                    <DataGridTextColumn Header="Telefon" Width="60"
-                                        />
-                    <DataGridTextColumn Header="Adres" Width="120"
-                                        />
-                    <DataGridTextColumn Header="Pokoje" Width="50"
-                                        />-->
-                </DataGrid.Columns>
-            </DataGrid>
-            <TextBox x:Name="textBox1"
+            <TextBox x:Name="title"
                      HorizontalAlignment="Left" 
-                     Height="140" 
-                     
-                     Margin="508,74,0,0" 
+                     Height="20" 
+                     Margin="30,30,0,0" 
                      TextWrapping="Wrap" 
-                     Text="Scr" 
+                     Text="---" 
                      VerticalAlignment="Top" 
-                     Width="229"/>
+                     Width="463"/>
 
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="30,104,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="Opis ogłoszenia" 
+                       VerticalAlignment="Top" 
+                       Width="87"/>
 
-
-            <TextBox x:Name="textBox2" 
+            <TextBox x:Name="opis" 
                      HorizontalAlignment="Left" 
-                     Height="124" 
-                     Margin="772,220,0,0" 
+                     Height="491" 
+                     Margin="30,122,0,0" 
                      TextWrapping="Wrap" 
-                     Text="TextBox" 
+                     Text="---" 
                      VerticalAlignment="Top" 
-                     Width="205" 
-                     RenderTransformOrigin="-0.163,0.847"/>
+                     Width="463"/>
+
+            <TextBlock HorizontalAlignment="Left"
+               Margin="513,11,0,0" 
+               TextWrapping="Wrap" 
+               Text="Cena" 
+               VerticalAlignment="Top" 
+               Width="87"/>
+
+            <TextBox x:Name="prize"
+               HorizontalAlignment="Left" 
+               Height="20" 
+               Margin="513,30,0,0" 
+               TextWrapping="Wrap" 
+               Text="---" 
+               VerticalAlignment="Top" 
+               Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+               Margin="30,58,0,0" 
+               TextWrapping="Wrap" 
+               Text="Adres" 
+               VerticalAlignment="Top" 
+               Width="80"/>
+
+            <TextBox x:Name="address"
+               HorizontalAlignment="Left" 
+               Height="20" 
+               Margin="30,77,0,0" 
+               TextWrapping="Wrap" 
+               Text="---" 
+               VerticalAlignment="Top" 
+               Width="463"/>
+
+            <TextBlock HorizontalAlignment="Left"
+               Margin="513,104,0,0" 
+               TextWrapping="Wrap" 
+               Text="Powierzchnia" 
+               VerticalAlignment="Top" 
+               Width="87"/>
+
+            <TextBox x:Name="area"
+               HorizontalAlignment="Left" 
+               Height="20" 
+               Margin="513,122,0,0" 
+               TextWrapping="Wrap" 
+               Text="---" 
+               VerticalAlignment="Top" 
+               Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="631,11,0,0" 
+                TextWrapping="Wrap" 
+                Text="Pokoje" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="rooms"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="631,30,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="631,58,0,0" 
+                TextWrapping="Wrap" 
+                Text="Poziom" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="floor"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="631,77,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="631,104,0,0" 
+                TextWrapping="Wrap" 
+                Text="Zabudowa" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="develop"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="631,122,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="513,58,0,0" 
+                TextWrapping="Wrap" 
+                Text="Czynsz" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="rent"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="513,77,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="746,11,0,0" 
+                TextWrapping="Wrap" 
+                Text="Rynek" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="rynek"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="746,30,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="746,58,0,0" 
+                TextWrapping="Wrap" 
+                Text="Umeblowanie" 
+                VerticalAlignment="Top" 
+                Width="87"/>
+
+            <TextBox x:Name="furnitured"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="746,77,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100"/>
+
+
+
+
+
+
 
 
 

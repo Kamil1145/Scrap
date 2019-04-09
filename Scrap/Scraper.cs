@@ -30,7 +30,7 @@ namespace Scrap
             List<string> pricel = new List<string>();
             List<string> tab = new List<string>();
             List<string> tab2 = new List<string>();
-            string[,] tab3;
+            List<string> imgs = new List<string>();
 
             var web = new HtmlWeb();
             var doc = web.Load(page);
@@ -78,23 +78,61 @@ namespace Scrap
                 pricel.Add(price);
             }
 
+
+            //for (int i = 1; i < 9; i++)
+            //{
+            //    string node = "//div[@id= 'offerdescription']";
+
+            //    foreach (HtmlNode link in doc.DocumentNode.SelectNodes(node))
+            //    {
+
+            //    }
+            //    {
+            //        / string hrefValue = link.GetAttributeValue("src")
+            //        //string hrefValue = link.GetAttributeValue("src", string.Empty);
+            //        imgs.Add(hrefValue);
+            //        if (doc.DocumentNode.HasAttributes == false)
+            //            break;
+            //    }
+            //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             headerl.RemoveAll(string.IsNullOrEmpty);
             contentl.RemoveAll(string.IsNullOrEmpty);
             addressl.RemoveAll(string.IsNullOrEmpty);
+            pricel.RemoveAll(string.IsNullOrEmpty);
 
             header = headerl[0];
             header = header.Replace("\n", "");
             header = header.Trim();
 
             text = contentl[0];
-            text = text.Replace("\n", "");
-            text = text.Replace("\r", "");
-            text = text.Trim();
+            //text = text.Replace("\n", "");
+            //text = text.Replace("\r", "");
+            //text = text.Trim();
 
             loc = addressl[0];
             loc = loc.Trim();
 
-
+            price = pricel[0];
 
             for (int i = 0; i < tab.Count; i++)
             {
@@ -104,8 +142,6 @@ namespace Scrap
                 tab[i] = tab[i].Trim();
                 tab[i] = tab[i].Replace("\t", "");
                 tab[i] = tab[i].Replace("\n", "");
-
-
 
                 ind = tab[i].IndexOf("   ");
                 if (ind == -1)
@@ -131,111 +167,66 @@ namespace Scrap
                 s = tab2.Count;
             }
 
-            tab3 = new string[10, 2];
 
-            tab3[0, 0] = "Tytuł";
-            tab3[0, 1] = header;
-            tab3[1, 0] = "Opis";
-            tab3[1, 1] = text;
-            tab3[2, 0] = "Adres";
-            tab3[2, 1] = loc;
-
-            for (int i = 3; i < s; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    if (j == 0)
-                    {
-                        tab3[i, j] = tab[i];
-                    }
-                    if (j == 1)
-                    {
-                        tab3[i, j] = tab2[i];
-                    }
-                }
-            }
+            Property.prop.Add("Tytul", header);
+            Property.prop.Add("Opis", text);
+            Property.prop.Add("Adres", loc);
+            Property.prop.Add("Cena", price);
 
 
-            //Dictionary<string, string> property = new Dictionary<string, string>();
-
-
-
-            Property.prop.Add("tytuł", header);
-            Property.prop.Add("opis", text);
-            Property.prop.Add("adres", loc);
-
-            //for (int i = 0; i < tab.Count - 1; i++)
-            //{
-            //    switch (tab[i])
-            //    {
-            //        case "Cena za m²":
-            //            property.Add("Cena za m²", tab2[i]);
-            //            break;
-            //        case "Umeblowane":
-            //            property.Add("Umeblowane", tab2[i]);
-            //            break;
-            //        case "Oferta od":
-            //            property.Add("Oferta od", tab2[i]);
-            //            break;
-            //        case "Poziom":
-            //            property.Add("Poziom", tab2[i]);
-            //            break;
-            //        case "Rynek":
-            //            property.Add("Rynek", tab2[i]);
-            //            break;
-            //        case "Rodzaj zabudowy":
-            //            property.Add("Rodzaj zabudowy", tab2[i]);
-            //            break;
-            //        case "Powierzchnia":
-            //            property.Add("Powierzchnia", tab2[i]);
-            //            break;
-            //        case "Liczba pokoi":
-            //            property.Add("Liczba pokoi", tab2[i]);
-            //            break;
-
-            //        default:
-            //            break;
-            //    }
-
-
-
-            for (int i = 0; i < tab.Count - 1; i++)
+            for (int i = 0; i < s ; i++)
             {
                 switch (tab[i])
                 {
                     case "Cena za m²":
                         Property.prop.Add("Cena za m²", tab2[i]);
                         break;
+
                     case "Umeblowane":
                         Property.prop.Add("Umeblowane", tab2[i]);
                         break;
+
                     case "Oferta od":
                         Property.prop.Add("Oferta od", tab2[i]);
                         break;
+
                     case "Poziom":
                         Property.prop.Add("Poziom", tab2[i]);
                         break;
+
                     case "Rynek":
                         Property.prop.Add("Rynek", tab2[i]);
                         break;
+
                     case "Rodzaj zabudowy":
                         Property.prop.Add("Rodzaj zabudowy", tab2[i]);
                         break;
+
                     case "Powierzchnia":
                         Property.prop.Add("Powierzchnia", tab2[i]);
                         break;
+
                     case "Liczba pokoi":
                         Property.prop.Add("Liczba pokoi", tab2[i]);
                         break;
 
+                    case "Czynsz (dodatkowo)":
+                        Property.prop.Add("Czynsz(dodatkowo)", tab2[i]);
+                        break;
+
+
+
+
+                                               
                     default:
                         break;
                 }
-
-
-
-
             }
+
+
+
+
+
         }
     }
 }

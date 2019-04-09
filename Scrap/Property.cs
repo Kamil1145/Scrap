@@ -8,6 +8,7 @@ namespace Scrap
 {
     public class Property
     {
+
         public static Dictionary<string, string> prop = new Dictionary<string, string>();
 
         public string tytul;
@@ -22,13 +23,14 @@ namespace Scrap
         public string cenaZaM;
         public string ofertaOd;
         public string rynek;
+        public string czynsz;
 
         public Property()
         {
         }
 
         public Property(string tytul, string opis, string cena, string adres, string powierzchnia, string pokoje, string poziom, 
-                        string umeblowanie, string rodzaj_zabudowy, string cenaZaM, string ofertaOd, string rynek)
+                        string umeblowanie, string rodzaj_zabudowy, string cenaZaM, string ofertaOd, string rynek, string czynsz)
         {
             this.tytul = tytul;
             this.opis = opis;
@@ -42,6 +44,7 @@ namespace Scrap
             this.cenaZaM = cenaZaM;
             this.ofertaOd = ofertaOd;
             this.rynek = rynek;
+            this.czynsz = czynsz;
         }
 
         public string Tytul
@@ -104,8 +107,11 @@ namespace Scrap
             set { rynek = value; }
             get { return rynek; }
         }
-
-
+        public string Czynsz
+        {
+            set { czynsz = value; }
+            get { return czynsz; }
+        }
 
 
 
