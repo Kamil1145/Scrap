@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Net;
 using System.Web;
 using System.IO;
-using System.Drawing.Imaging;
+using System.Drawing;
 using System.Collections;
 using System;
 
@@ -79,6 +79,39 @@ namespace Scrap
             }
 
 
+            var Photos = doc.DocumentNode.SelectNodes("//*[@class='offerdescription clr']");
+
+            foreach (HtmlNode photo in doc.DocumentNode.SelectNodes("//img"))
+            {
+
+                string value = photo.GetAttributeValue("src", string.Empty);
+                string link = "https://apollo-ireland.akamaized.net";
+
+                if (string.Compare(value,0,link,0,35)==0)
+                    if (value.IndexOf("644x461")>0)
+                        imgs.Add(value);
+            }
+
+            for (int i = 0; i < imgs.Count; i++)
+            {
+                {
+                    WebRequest requestPic = WebRequest.Create(imgs[i]);
+                    WebResponse responsePic = requestPic.GetResponse();
+                    Image webImage = Image.FromStream(responsePic.GetResponseStream());
+                    webImage.Save(@"c:\\temporary\\" + i + ".jpg");
+                }
+            }
+
+ 
+
+
+
+
+
+
+
+
+
             //for (int i = 1; i < 9; i++)
             //{
             //    string node = "//div[@id= 'offerdescription']";
@@ -95,20 +128,6 @@ namespace Scrap
             //            break;
             //    }
             //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

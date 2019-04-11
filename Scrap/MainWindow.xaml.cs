@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Imaging;
+using Microsoft.Win32;
+
 
 
 namespace Scrap
@@ -87,8 +90,11 @@ namespace Scrap
                 rynek.Text = Property.prop["Rynek"];
             else
                 rynek.Text = null;
-            
-        
+
+
+          
+            img0.Source = new BitmapImage(new Uri(@"c:\\temporary\\5.jpg"));
+
 
 
         }
@@ -99,7 +105,7 @@ namespace Scrap
 
         }
 
-
+        
 
 
 

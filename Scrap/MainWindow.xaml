@@ -219,10 +219,20 @@
                 Text="---" 
                 VerticalAlignment="Top" 
                 Width="100"/>
+            <Rectangle Fill="Azure" 
+                       HorizontalAlignment="Left" 
+                       Height="106" 
+                       Margin="534,202,0,0" 
+                       Stroke="Black" 
+                       VerticalAlignment="Top" 
+                       Width="106"/>
 
-
-
-
+            <Image x:Name="img0" 
+                   HorizontalAlignment="Left" 
+                   Height="100" 
+                   Margin="537,205,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="100"/>
 
 
 
