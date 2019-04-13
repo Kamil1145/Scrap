@@ -112,25 +112,6 @@ namespace Scrap
             set { czynsz = value; }
             get { return czynsz; }
         }
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
 

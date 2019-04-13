@@ -87,8 +87,8 @@ namespace Scrap
                 string value = photo.GetAttributeValue("src", string.Empty);
                 string link = "https://apollo-ireland.akamaized.net";
 
-                if (string.Compare(value,0,link,0,35)==0)
-                    if (value.IndexOf("644x461")>0)
+                if (string.Compare(value, 0, link, 0, 35) == 0)
+                    if (value.IndexOf("644x461") > 0)
                         imgs.Add(value);
             }
 
@@ -101,33 +101,6 @@ namespace Scrap
                     webImage.Save(@"c:\\temporary\\" + i + ".jpg");
                 }
             }
-
- 
-
-
-
-
-
-
-
-
-
-            //for (int i = 1; i < 9; i++)
-            //{
-            //    string node = "//div[@id= 'offerdescription']";
-
-            //    foreach (HtmlNode link in doc.DocumentNode.SelectNodes(node))
-            //    {
-
-            //    }
-            //    {
-            //        / string hrefValue = link.GetAttributeValue("src")
-            //        //string hrefValue = link.GetAttributeValue("src", string.Empty);
-            //        imgs.Add(hrefValue);
-            //        if (doc.DocumentNode.HasAttributes == false)
-            //            break;
-            //    }
-            //}
 
 
 
@@ -193,7 +166,7 @@ namespace Scrap
             Property.prop.Add("Cena", price);
 
 
-            for (int i = 0; i < s ; i++)
+            for (int i = 0; i < s; i++)
             {
                 switch (tab[i])
                 {
@@ -236,7 +209,7 @@ namespace Scrap
 
 
 
-                                               
+
                     default:
                         break;
                 }
@@ -249,12 +222,6 @@ namespace Scrap
         }
     }
 }
-
-
-
-
-
-
 
 
 

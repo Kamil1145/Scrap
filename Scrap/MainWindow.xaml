@@ -8,40 +8,46 @@
         Title="MyOLXScraper" Height="739" Width="1068">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="63"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <DockPanel>
-                <Menu>
+            <DockPanel Margin="0,0,0,-10">
+                <Menu Margin="0,0,0,54">
                     <MenuItem Header="File">
                         <MenuItem Header="Export"
                                   Click="MenuItem_Click"/>
+
+                        <MenuItem Header="Zamknij program"
+                                  Click="Close_Program"/>
+
                     </MenuItem>
                 </Menu>
 
                 <Button x:Name="Button"
                         DockPanel.Dock="Right"
-                        Width="50"
-                        Height="25"
-                        Content="Scrape"
-                        Margin="0,0,10,0"
+                        Width="71"
+                        Content="Pobierz"
+                        Margin="0,34,10,19"
                         Click="Button_Click"
                         />
 
                 <TextBox DockPanel.Dock="Bottom"
                          x:Name="TbPage"
                          Height="20"
-                         Text="URL"
-                         Margin="0,0,20,0"/>
+                         Text=""
+                         Margin="110,15,24,0"/>
+
+
             </DockPanel>
 
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,10,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1318*"/>
-                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="407*"/>
+                <ColumnDefinition Width="16*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock HorizontalAlignment="Left"
@@ -58,7 +64,7 @@
                      TextWrapping="Wrap" 
                      Text="---" 
                      VerticalAlignment="Top" 
-                     Width="463"/>
+                     Width="463" Grid.ColumnSpan="2"/>
 
             <TextBlock HorizontalAlignment="Left"
                        Margin="30,104,0,0" 
@@ -74,23 +80,23 @@
                      TextWrapping="Wrap" 
                      Text="---" 
                      VerticalAlignment="Top" 
-                     Width="463"/>
+                     Width="463" Grid.ColumnSpan="2"/>
 
             <TextBlock HorizontalAlignment="Left"
-               Margin="513,11,0,0" 
+               Margin="299,11,0,0" 
                TextWrapping="Wrap" 
                Text="Cena" 
                VerticalAlignment="Top" 
-               Width="87"/>
+               Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="prize"
                HorizontalAlignment="Left" 
                Height="20" 
-               Margin="513,30,0,0" 
+               Margin="299,30,0,0" 
                TextWrapping="Wrap" 
                Text="---" 
                VerticalAlignment="Top" 
-               Width="100"/>
+               Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
                Margin="30,58,0,0" 
@@ -106,139 +112,264 @@
                TextWrapping="Wrap" 
                Text="---" 
                VerticalAlignment="Top" 
-               Width="463"/>
+               Width="463" Grid.ColumnSpan="2"/>
 
             <TextBlock HorizontalAlignment="Left"
-               Margin="513,104,0,0" 
+               Margin="299,104,0,0" 
                TextWrapping="Wrap" 
                Text="Powierzchnia" 
                VerticalAlignment="Top" 
-               Width="87"/>
+               Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="area"
-               HorizontalAlignment="Left" 
-               Height="20" 
-               Margin="513,122,0,0" 
-               TextWrapping="Wrap" 
-               Text="---" 
-               VerticalAlignment="Top" 
-               Width="100"/>
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="299,122,0,0" 
+                TextWrapping="Wrap" 
+                Text="---" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="631,11,0,0" 
+                Margin="417,11,0,0" 
                 TextWrapping="Wrap" 
                 Text="Pokoje" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="rooms"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="631,30,0,0" 
+                Margin="417,30,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="631,58,0,0" 
+                Margin="417,58,0,0" 
                 TextWrapping="Wrap" 
                 Text="Poziom" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="floor"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="631,77,0,0" 
+                Margin="417,77,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="631,104,0,0" 
+                Margin="417,104,0,0" 
                 TextWrapping="Wrap" 
                 Text="Zabudowa" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="develop"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="631,122,0,0" 
+                Margin="417,122,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="513,58,0,0" 
+                Margin="299,58,0,0" 
                 TextWrapping="Wrap" 
                 Text="Czynsz" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="rent"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="513,77,0,0" 
+                Margin="299,77,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="746,11,0,0" 
+                Margin="532,11,0,0" 
                 TextWrapping="Wrap" 
                 Text="Rynek" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="rynek"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="746,30,0,0" 
+                Margin="532,30,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="746,58,0,0" 
+                Margin="532,58,0,0" 
                 TextWrapping="Wrap" 
                 Text="Umeblowanie" 
                 VerticalAlignment="Top" 
-                Width="87"/>
+                Width="87" Grid.Column="1"/>
 
             <TextBox x:Name="furnitured"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="746,77,0,0" 
+                Margin="532,77,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100"/>
+                Width="100" Grid.Column="1"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                Margin="532,103,0,0" 
+                TextWrapping="Wrap" 
+                Text="Telefon" 
+                VerticalAlignment="Top" 
+                Width="87" Grid.Column="1"/>
+
+            <TextBox x:Name="phone"
+                HorizontalAlignment="Left" 
+                Height="20" 
+                Margin="532,122,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
             <Rectangle Fill="Azure" 
-                       HorizontalAlignment="Left" 
-                       Height="106" 
-                       Margin="534,202,0,0" 
-                       Stroke="Black" 
-                       VerticalAlignment="Top" 
-                       Width="106"/>
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="320,202,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
 
             <Image x:Name="img0" 
-                   HorizontalAlignment="Left" 
-                   Height="100" 
-                   Margin="537,205,0,0" 
-                   VerticalAlignment="Top" 
-                   Width="100"/>
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="323,205,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="320,340,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img1" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="323,343,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="466,205,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img2" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="469,208,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="602,205,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img3" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="605,208,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="466,340,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img4" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="469,343,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="602,340,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img5" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="605,343,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="320,470,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img6" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="323,473,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+            <Rectangle Fill="Azure" 
+                HorizontalAlignment="Left" 
+                Height="106" 
+                Margin="466,470,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top" 
+                Width="106" Grid.Column="1"/>
+
+            <Image x:Name="img7" 
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Margin="469,473,0,0" 
+                VerticalAlignment="Top" 
+                Width="100" Grid.Column="1"/>
+
+
 
 
 
 
 
         </Grid>
+        <Label Content="Link z ogłoszeniem" HorizontalAlignment="Left" Margin="25,31,0,0" VerticalAlignment="Top" Width="112" Height="27"/>
 
 
 
