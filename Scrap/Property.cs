@@ -24,13 +24,14 @@ namespace Scrap
         public string ofertaOd;
         public string rynek;
         public string czynsz;
+        public string telefon;
 
         public Property()
         {
         }
 
         public Property(string tytul, string opis, string cena, string adres, string powierzchnia, string pokoje, string poziom, 
-                        string umeblowanie, string rodzaj_zabudowy, string cenaZaM, string ofertaOd, string rynek, string czynsz)
+                        string umeblowanie, string rodzaj_zabudowy, string cenaZaM, string ofertaOd, string rynek, string czynsz, string telefon)
         {
             this.tytul = tytul;
             this.opis = opis;
@@ -45,6 +46,7 @@ namespace Scrap
             this.ofertaOd = ofertaOd;
             this.rynek = rynek;
             this.czynsz = czynsz;
+            this.telefon = telefon;
         }
 
         public string Tytul
@@ -111,6 +113,11 @@ namespace Scrap
         {
             set { czynsz = value; }
             get { return czynsz; }
+        }
+        public string Telefon
+        {
+            set { telefon = value; }
+            get { return telefon; }
         }
     }
 }

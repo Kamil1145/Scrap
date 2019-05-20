@@ -70,8 +70,7 @@ namespace Scrap
             }
 
             var Price = doc.DocumentNode.SelectNodes("//*[@class='offer-sidebar__inner offeractions']");
-
-
+            
             foreach (var prize in Price)
             {
                 price = HttpUtility.HtmlDecode(prize.SelectSingleNode("//*[@id='offeractions']/div[1]/strong").InnerText);
@@ -117,9 +116,9 @@ namespace Scrap
             header = header.Trim();
 
             text = contentl[0];
-            //text = text.Replace("\n", "");
-            //text = text.Replace("\r", "");
-            //text = text.Trim();
+            text = text.Replace("\n", "");
+            text = text.Replace("\r", "");
+            text = text.Trim();
 
             loc = addressl[0];
             loc = loc.Trim();
@@ -141,9 +140,14 @@ namespace Scrap
                     continue;
                 }
                 tab2.Add(tab[i].Substring(ind));
-                tab2[i] = tab2[i].Trim();
                 tab[i] = tab[i].Remove(ind);
             }
+
+            for (int i = 0; i < tab2.Count; i++)
+            {
+                tab2[i] = tab2[i].Trim();
+            }
+
 
 
             tab.RemoveAll(string.IsNullOrEmpty);
@@ -205,11 +209,7 @@ namespace Scrap
                     case "Czynsz (dodatkowo)":
                         Property.prop.Add("Czynsz(dodatkowo)", tab2[i]);
                         break;
-
-
-
-
-
+                        
                     default:
                         break;
                 }

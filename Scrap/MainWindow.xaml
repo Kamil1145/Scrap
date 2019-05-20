@@ -14,9 +14,14 @@
         <Grid Grid.Row="0">
             <DockPanel Margin="0,0,0,-10">
                 <Menu Margin="0,0,0,54">
-                    <MenuItem Header="File">
+                    <MenuItem Header="File" 
+                              Click="MenuItem_Click_1">
+                        
                         <MenuItem Header="Export"
                                   Click="MenuItem_Click"/>
+                        
+                        <MenuItem Header="Export PDF"
+                                  Click="Make_pdf"/>
 
                         <MenuItem Header="Zamknij program"
                                   Click="Close_Program"/>
@@ -29,7 +34,7 @@
                         Width="71"
                         Content="Pobierz"
                         Margin="0,34,10,19"
-                        Click="Button_Click"
+                        Click="Download"
                         />
 
                 <TextBox DockPanel.Dock="Bottom"
@@ -144,7 +149,7 @@
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100" Grid.Column="1"/>
+                Width="120" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
                 Margin="417,58,0,0" 
@@ -160,7 +165,7 @@
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100" Grid.Column="1"/>
+                Width="120" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
                 Margin="417,104,0,0" 
@@ -176,7 +181,7 @@
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
-                Width="100" Grid.Column="1"/>
+                Width="120" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
                 Margin="299,58,0,0" 
@@ -195,7 +200,7 @@
                 Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="532,11,0,0" 
+                Margin="557,11,0,0" 
                 TextWrapping="Wrap" 
                 Text="Rynek" 
                 VerticalAlignment="Top" 
@@ -204,14 +209,14 @@
             <TextBox x:Name="rynek"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="532,30,0,0" 
+                Margin="557,30,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
                 Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="532,58,0,0" 
+                Margin="557,58,0,0" 
                 TextWrapping="Wrap" 
                 Text="Umeblowanie" 
                 VerticalAlignment="Top" 
@@ -220,14 +225,14 @@
             <TextBox x:Name="furnitured"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="532,77,0,0" 
+                Margin="557,77,0,0" 
                 TextWrapping="Wrap" 
                 Text="---" 
                 VerticalAlignment="Top" 
                 Width="100" Grid.Column="1"/>
 
             <TextBlock HorizontalAlignment="Left"
-                Margin="532,103,0,0" 
+                Margin="557,103,0,0" 
                 TextWrapping="Wrap" 
                 Text="Telefon" 
                 VerticalAlignment="Top" 
@@ -236,7 +241,7 @@
             <TextBox x:Name="phone"
                 HorizontalAlignment="Left" 
                 Height="20" 
-                Margin="532,122,0,0" 
+                Margin="557,122,0,0" 
                 TextWrapping="Wrap" 
                 Text="" 
                 VerticalAlignment="Top" 

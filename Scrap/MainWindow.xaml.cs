@@ -39,7 +39,7 @@ namespace Scrap
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Download(object sender, RoutedEventArgs e)
         {
             scraper.ScrapeData(TbPage.Text);
 
@@ -97,15 +97,23 @@ namespace Scrap
 
             if (File.Exists(@"c:\\temporary\\0.jpg"))
                 img0.Source = new BitmapImage(new Uri(@"c:\\temporary\\0.jpg"));
-            
+            else
+                img0.Source = null;
+
             if (File.Exists(@"c:\\temporary\\1.jpg"))
                 img1.Source = new BitmapImage(new Uri(@"c:\\temporary\\1.jpg"));
+            else
+                img1.Source = null;
 
             if (File.Exists(@"c:\\temporary\\2.jpg"))
                 img2.Source = new BitmapImage(new Uri(@"c:\\temporary\\2.jpg"));
+            else
+                img2.Source = null;
 
             if (File.Exists(@"c:\\temporary\\3.jpg"))
                 img3.Source = new BitmapImage(new Uri(@"c:\\temporary\\3.jpg"));
+            else
+                img3.Source = null;
 
             if (File.Exists(@"c:\\temporary\\4.jpg"))
                 img4.Source = new BitmapImage(new Uri(@"c:\\temporary\\4.jpg"));
@@ -126,6 +134,11 @@ namespace Scrap
                 img7.Source = new BitmapImage(new Uri(@"c:\\temporary\\7.jpg"));
             else
                 img7.Source = null;
+
+
+            MessageBox.Show("Pamiętaj o przepisaniu numeru telefonu!");
+
+
 
         }
 
@@ -194,11 +207,23 @@ namespace Scrap
 
 
 
-            System.Threading.Thread.Sleep(8000);
+            System.Threading.Thread.Sleep(400);
             MessageBox.Show("Dane zapisano w lokalizacji: " + path);
 
 
         }
+
+        private void Make_pdf(object sender, RoutedEventArgs e)
+        {
+
+            //Printer print = new Printer();
+            //print.DisplayInExcel(Property.prop["Tytul"]);
+
+            MongoProp db = new MongoProp("Property_database");
+            db.InsertRecord("Property", Property.prop);
+
+        }
+
 
        private void Close_Program(object sender, RoutedEventArgs e)
         {
@@ -206,6 +231,12 @@ namespace Scrap
             Application.Current.Shutdown();
             
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
 
         //private void Delete_all(object sender, RoutedEventArgs e)
